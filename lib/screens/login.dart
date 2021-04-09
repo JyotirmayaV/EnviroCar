@@ -44,7 +44,7 @@ class _LoginState extends State<Login> {
         height: 40,
         child: Text('Login'),
         onPressed: () {
-          Navigator.pushNamed(context, "trial");
+          Navigator.pushNamed(context, "home");
         },
       ),
     );
@@ -94,18 +94,25 @@ class _LoginState extends State<Login> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                imgLogo,
-                spaceSizedBox,
-                txtSignIn,
-                spaceSizedBox,
-                txtUsername,
-                spaceSizedBox,
-                txtPassword,
-                spaceSizedBox,
-                btnLogin,
-                spaceSizedBox,
-                txtQuestion,
-                rtxtRegister,
+                Expanded(child:
+                ListView(
+                  padding: const EdgeInsets.all(8),
+                  children: <Widget>[
+                    imgLogo,
+                    spaceSizedBox,
+                    txtSignIn,
+                    spaceSizedBox,
+                    txtUsername,
+                    spaceSizedBox,
+                    txtPassword,
+                    spaceSizedBox,
+                    btnLogin,
+                    spaceSizedBox,
+                    txtQuestion,
+                    Center(child: rtxtRegister),
+                  ],
+                ),
+                )
               ],
             ),
           ),

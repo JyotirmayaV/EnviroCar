@@ -150,27 +150,33 @@ class _RegisterState extends State<Register> {
           child: Container(
             width: 300,
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                imgLogo,
-                spaceSizedBox,
-                txtSignUp,
-                spaceSizedBox,
-                txtUsername,
-                spaceSizedBox,
-                txtEmail,
-                spaceSizedBox,
-                txtPassword,
-                spaceSizedBox,
-                txtCnfPassword,
-                spaceSizedBox,
-                cbAcknowledgement,
-                cbPrivacy,
-                spaceSizedBox,
-                btnSubmit,
-                spaceSizedBox,
-                txtQuestion,
-                rtxtSignIn
+                Expanded(child:
+                ListView(
+                  padding: const EdgeInsets.all(8),
+                  children: <Widget>[ 
+                  imgLogo,
+                  spaceSizedBox,
+                  txtSignUp,
+                  spaceSizedBox,
+                  txtUsername,
+                  spaceSizedBox,
+                  txtEmail,
+                  spaceSizedBox,
+                  txtPassword,
+                  spaceSizedBox,
+                  txtCnfPassword,
+                  spaceSizedBox,
+                  cbAcknowledgement,
+                  cbPrivacy,
+                  spaceSizedBox,
+                  btnSubmit,
+                  spaceSizedBox,
+                  txtQuestion,
+                  Center(child: rtxtSignIn),
+                  ]
+                ),
+                )
               ],
             ),
           ),
