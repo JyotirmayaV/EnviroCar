@@ -61,7 +61,7 @@ class _HomeState extends State<Home> {
             gradient: LinearGradient(
           begin: Alignment.bottomRight,
           end: Alignment.topLeft,
-          colors: [Color(0x830065A0), Color(0xFF0065A0)],
+          colors: [Color(0x8C03769B), Color(0x9D03769B)],
           //tileMode: TileMode.mirror,
         )),
         child: Center(
