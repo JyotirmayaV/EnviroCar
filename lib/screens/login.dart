@@ -18,16 +18,6 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     //----------------------My functions--------------------------
 
-    // myweb() async {
-    //   print("hh");
-    //   var url = Uri.https('envirocar.org', '/api/dev/users/Jyotirmaya',
-    //       {'X-User': '{Jyotirmaya}', 'X-Token': '{password}'});
-    //   var r = await http.get(url);
-    //   var data = r.body;
-    //   var fdata = convert.jsonDecode(data);
-    //   print(fdata);
-    // }
-
     displaySnackbar(String message) {
       final snackBar = SnackBar(content: Text(message));
       ScaffoldMessenger.of(context).showSnackBar(snackBar);
@@ -56,29 +46,29 @@ class _LoginState extends State<Login> {
           //print(jsonDecode(response.body));
           return true;
         } else if (response.statusCode == 400) {
-          print("inside 400 error");
-          var error = jsonDecode(response.body);
-          print(error);
-          var errorMessage = error['details']['errors'][0]["message"];
-          print(errorMessage);
-          displaySnackbar(errorMessage);
+                    print("inside 400 error");
+                    var error = jsonDecode(response.body);
+                    print(error);
+                    var errorMessage = error['details']['errors'][0]["message"];
+                    print(errorMessage);
+                    displaySnackbar(errorMessage);
         } else {
-          print(response.body);
-          var error = jsonDecode(response.body);
-          var errorMessage = error['message'];
-          print(errorMessage);
-          displaySnackbar(errorMessage);
+                    print(response.body);
+                    var error = jsonDecode(response.body);
+                    var errorMessage = error['message'];
+                    print(errorMessage);
+                    displaySnackbar(errorMessage);
         }
         return false;
       } //try
       on Exception catch (exception) {
-        print("Exception Block");
-        print(exception);
-        displaySnackbar(exception.toString());
+                    print("Exception Block");
+                    print(exception);
+                    displaySnackbar(exception.toString());
       } catch (error) {
-        print("error Block");
-        print(error);
-        displaySnackbar(error.toString());
+                    print("error Block");
+                    print(error);
+                    displaySnackbar(error.toString());
       }
       return false;
     } //closing of signIn function
