@@ -244,7 +244,7 @@ class _RegisterState extends State<Register> {
             });
             bool action = await register();
             if (action) {
-              Navigator.pushNamedAndRemoveUntil(context, "home",(r) => false,arguments: {"name" : username});
+              Navigator.pushNamedAndRemoveUntil(context, "login",(r) => false);
             }
             setState(() {
               progressSpin = false;
