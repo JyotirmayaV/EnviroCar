@@ -45,11 +45,6 @@ class _HomeState extends State<Home> {
     return Scaffold(
         body: Stack(children: <Widget>[
       Container(
-          //color: Color(0xFA0065A0),
-          //decoration: BoxDecoration(
-          //image: DecorationImage(image: imgBackground)),
-          //width: double.infinity,
-          //height: double.infinity,
           decoration: BoxDecoration(
         image: DecorationImage(
           image: imgBackground,
@@ -61,8 +56,7 @@ class _HomeState extends State<Home> {
             gradient: LinearGradient(
           begin: Alignment.bottomRight,
           end: Alignment.topLeft,
-          colors: [Color(0x8C03769B), Color(0x9D03769B)],
-          //tileMode: TileMode.mirror,
+          colors: [Color(0xAD03769B), Color(0xFF03769B)],
         )),
         child: Center(
           child: Container(

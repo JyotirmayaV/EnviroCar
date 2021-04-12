@@ -81,10 +81,13 @@ class _RegisterState extends State<Register> {
             'acceptedTerms': true,
           }),
         );
-
-        if (response.statusCode == 200) {
+        print("response is_" + response.statusCode.toString() + "_");
+        if (response.statusCode == 201 || response.statusCode == 200) {
           //print(response.body);
-          print(jsonDecode(response.body));
+          //Note : API for register returns nothing on successful registration
+          //print(jsonDecode(response.body));
+          print("entered here in 200");
+          displaySnackbar("Registration Successful.Check mail for next steps");
           return true;
         } else if (response.statusCode == 400) {
           print("inside 400 error");
@@ -94,6 +97,7 @@ class _RegisterState extends State<Register> {
           print(errorMessage);
           displaySnackbar(errorMessage);
         } else {
+          print("apart from 200 and 400");
           print(response.body);
           var error = jsonDecode(response.body);
           var errorMessage = error['message'];
@@ -129,7 +133,7 @@ class _RegisterState extends State<Register> {
         gradient: LinearGradient(
       begin: Alignment.bottomRight,
       end: Alignment.topLeft,
-      colors: [Color(0x8C03769B), Color(0x9D03769B)],
+      colors: [Color(0xAD03769B), Color(0xFF03769B)],
     ));
 
     var imgLogo = Image.asset('assets/images/img_envirocar_logo_white.png');
@@ -142,51 +146,75 @@ class _RegisterState extends State<Register> {
         ));
 
     var txtUsername = TextField(
+      style: TextStyle(color: Colors.white),
       decoration: InputDecoration(
           hintText: "Username",
-          prefixIcon: Icon(Icons.person_outline),
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(20))),
+          prefixIcon: Icon(Icons.person_outline,color: Colors.white,),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(20),
+            ),
+          filled: true,
+          fillColor: Color(0x2A000000),
+          hintStyle: TextStyle(color: Colors.white),
+          ),
       onChanged: (value) => {username = value},
       autofocus: true,
     );
 
     var txtEmail = TextField(
+      style: TextStyle(color: Colors.white),
       decoration: InputDecoration(
           hintText: "E-mail",
-          prefixIcon: Icon(Icons.email),
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(20))),
+          prefixIcon: Icon(Icons.email,color: Colors.white),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(20),
+            ),
+          filled: true,
+          fillColor: Color(0x2A000000),
+          hintStyle: TextStyle(color: Colors.white),
+          ),
       onChanged: (value) => {email = value},
       autocorrect: true,
     );
 
     var txtPassword = TextField(
+      style: TextStyle(color: Colors.white),
       obscureText: passwordVisible,
       decoration: InputDecoration(
           hintText: "Password",
-          prefixIcon: Icon(Icons.lock),
+          prefixIcon: Icon(Icons.lock,color: Colors.white),
           suffix: InkWell(
             onTap: passwordVisibilty,
             child: Icon(
               passwordVisible ? Icons.visibility : Icons.visibility_off,
             ),
           ),
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(20))),
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
+          filled: true,
+          fillColor: Color(0x2A000000),
+          hintStyle: TextStyle(color: Colors.white),
+          ),
       onChanged: (value) => {password = value},
+      
     );
 
     var txtCnfPassword = TextField(
+        style: TextStyle(color: Colors.white),
         obscureText: cnfPasswordVisible,
         decoration: InputDecoration(
             hintText: "Confirm Password",
-            prefixIcon: Icon(Icons.lock),
+            prefixIcon: Icon(Icons.lock,color: Colors.white),
             suffix: InkWell(
               onTap: cnfPasswordVisibilty,
               child: Icon(
                 cnfPasswordVisible ? Icons.visibility : Icons.visibility_off,
               ),
             ),
-            border:
-                OutlineInputBorder(borderRadius: BorderRadius.circular(20))),
+            border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
+          filled: true,
+          fillColor: Color(0x2A000000),
+          hintStyle: TextStyle(color: Colors.white),
+          ),
         onChanged: (value) => {cnfPassword = value});
 
     var txtAcknowledgement = Text(
@@ -243,7 +271,7 @@ class _RegisterState extends State<Register> {
             });
             bool action = await register();
             if (action) {
-              Navigator.pushNamedAndRemoveUntil(context, "login",(r) => false);
+              Navigator.pushNamedAndRemoveUntil(context, "login", (r) => false);
             }
             setState(() {
               progressSpin = false;

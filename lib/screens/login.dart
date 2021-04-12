@@ -88,7 +88,7 @@ class _LoginState extends State<Login> {
         gradient: LinearGradient(
       begin: Alignment.bottomRight,
       end: Alignment.topLeft,
-      colors: [Color(0x8C03769B), Color(0x9D03769B)],
+      colors: [Color(0xAD03769B), Color(0xFF03769B)],
     ));
 
     var imgLogo = Image.asset('assets/images/img_envirocar_logo_white.png');
@@ -101,21 +101,29 @@ class _LoginState extends State<Login> {
         ));
 
     var txtUsername = TextField(
+      style: TextStyle(color: Colors.white),
       decoration: InputDecoration(
           hintText: "Username",
-          prefixIcon: Icon(Icons.person_outline),
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(20))),
+          prefixIcon: Icon(Icons.person_outline,color: Colors.white,),
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
+          filled: true,
+          fillColor: Color(0x2A000000),
+          hintStyle: TextStyle(color: Colors.white),
+          ),
       onChanged: (value) => {username = value},
       autofocus: true,
     );
 
     var txtPassword = TextField(
+      style: TextStyle(color: Colors.white),
       obscureText: true,
       decoration: InputDecoration(
           hintText: "Password",
-          prefixIcon: Icon(Icons.lock),
+          prefixIcon: Icon(Icons.lock,color: Colors.white,),
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
-          fillColor: Colors.indigo),
+          filled: true,
+          fillColor: Color(0x2A000000),
+          hintStyle: TextStyle(color: Colors.white),),
       onChanged: (value) => {password = value},
     );
 
