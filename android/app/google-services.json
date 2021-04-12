@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "933220115210",
+    "project_id": "envirocar-2116e",
+    "storage_bucket": "envirocar-2116e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:933220115210:android:cc2a68d962f5b3ae2ed0f3",
+        "android_client_info": {
+          "package_name": "com.example.enviroCar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "933220115210-uf2sr077n7f8vs4g8g12d3bdd9i5rj6t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaY82Z-pl35waWzvpDjzoD4jjfUrZeCAE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "933220115210-uf2sr077n7f8vs4g8g12d3bdd9i5rj6t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
