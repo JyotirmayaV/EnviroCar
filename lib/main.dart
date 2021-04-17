@@ -1,4 +1,7 @@
 
+import 'dart:js';
+
+import 'package:enviroCar/screens/bluetooth.dart';
 import 'package:enviroCar/screens/home.dart';
 import 'package:enviroCar/screens/login.dart';
 import 'package:enviroCar/screens/register.dart';
@@ -12,6 +15,7 @@ void main() {
         "login": (context) => Login(),
         "register": (context) => Register(),
         "home": (context) => Home(),
+        "bluetooth": (context) => Bluetooth()
       },
       debugShowCheckedModeBanner: false,
     ),

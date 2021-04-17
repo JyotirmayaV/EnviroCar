@@ -143,7 +143,7 @@ class _LoginState extends State<Login> {
             });
             bool action = await signIn();
             if (action) {
-              Navigator.pushNamedAndRemoveUntil(context, "home",(r) => false,arguments: {"name" : username});
+              Navigator.pushNamedAndRemoveUntil(context, "blue",(r) => false,arguments: {"name" : username});
             }
             setState(() {
               progressSpin = false;
